@@ -33,17 +33,14 @@ function Reduce() {
     });
   }
   return (
-      <>
-    <input value={state.name} 
-    onChange={handleInputChange}
-    />  
-    <button onClick={handleButtonClick}>
-        Increment age
-    </button>
-      </>;
-    )
-      
-    
+    <>
+      <input value={state.name} onChange={handleInputChange} />
+      <button onClick={handleButtonClick}>Increment age</button>
+      <p>
+        Hello , {state.name}. You are {state.age}
+      </p>
+    </>
+  );
 }
 
 export default Reduce;
