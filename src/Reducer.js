@@ -3,7 +3,7 @@ import React, { useReducer } from "react";
 function Reducer() {
   const initialState = 0;
   const reducer = (state, action) => {
-    return;
+    switch (action)
   };
   const [count, dispatch] = useReducer(reducer, initialState);
 
