@@ -34,7 +34,12 @@ function Reduce() {
   }
   return (
       <>
-    <input type="text" />  
+    <input value={state.name} 
+    onChange={handleInputChange}
+    />  
+    <button onClick={handleButtonClick}>
+        Increment age
+    </button>
       </>;
     )
       
