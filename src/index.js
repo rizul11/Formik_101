@@ -6,13 +6,15 @@ import CardBS from "./CardBS";
 // import App from './App';
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import FetchAPI from "./FetchAPI";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <FormikForm/> */}
-    <CardBS />
+    {/* <CardBS /> */}
+    <FetchAPI />
   </React.StrictMode>
 );
 
