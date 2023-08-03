@@ -10,7 +10,7 @@ function FormikForm() {
       <Formik
         validationSchema={NewValidations}
         initialValues={{ name: "", age: "", password: "" }}
-        onSubmit={(values) => {
+        onSubmit={(values) => { 
           console.log(values);
         }}
       >
@@ -23,13 +23,13 @@ function FormikForm() {
           <br />
           <label htmlFor="">Enter Age :</label>
           <Field type="number" name="age" />
-          <br />
+          <br />           
           <br />
           <label htmlFor="">Enter Password</label>
           <Field type="password" name="password" />
           <br />
-          <br />
-          <label htmlFor="">Gender: &nbsp;</label>
+          <br /> 
+          <label htmlFor="">Gender: &nbsp;</label> 
           <label htmlFor="">Male &nbsp;</label>
           <Field type="radio" name="gender" value="Male" />
           &nbsp;
