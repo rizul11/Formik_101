@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 
 function FetchAPI() {
-    fetch("http://ergast.com/api/f1/2019")
-    .then((response) => {
-       console.log(response);
-    })
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetch("https://dummyjson.com/products").then((response) => {
+      response.json().then((result) => {
+        console.log(result)
+        setPosts(result.products);
+      });
+    });
+  },[]);
   return (
     <div>
-      F1
+      <ul>
+        {posts.map((pst) => {
+          return (
+            <>
+              <li>{pst.id}</li>
+              <li>{pst.title}</li>
+              <li>{pst.description}</li>
+            </>
+          );
+        })}
+      </ul>
     </div>
-  )
+  );
 }
 
-export default FetchAPI
+export default FetchAPI;
