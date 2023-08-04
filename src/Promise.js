@@ -42,4 +42,13 @@ function tetheredGetNumber(resolve, reject) {
     console.log(`Got: ${info.value}, ${info.wordEvenOdd}`);
     return info;
   })
+
+  .catch((reason) => {
+    if(reason.cause) {
+        console.error("Had previously handled error");
+    }else {
+        console.error(`Trouble with PromiseGetWord(): $(reason)}`);
+    }
+  })
+.finally((info) => console.log("All done"));
 }
