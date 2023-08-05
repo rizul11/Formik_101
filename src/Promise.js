@@ -33,7 +33,7 @@ function tetheredGetNumber(resolve, reject) {
         resolve(parityInfo);
       }
     });
-  }
+  } 
 
   new Promise(tetheredGetNumber)
   .then(determineParity, troubleWithGetNumber)
