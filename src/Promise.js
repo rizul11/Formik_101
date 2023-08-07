@@ -18,6 +18,10 @@ function tetheredGetNumber(resolve, reject) {
         return{ value, isOdd};
     }
 
-    function troubleWithGetNumber()
+    function troubleWithGetNumber(reason){
+        const err = new Error("Trouble getting number" , {cause : reason});
+        console.error(err);
+        
+    }
 
 }
