@@ -6,7 +6,7 @@ function Reducer() {
     switch (action) {
         case 'increment':
             return state + 1 
-        case ''
+        case 'decrement'
     }
   };
   const [count, dispatch] = useReducer(reducer, initialState);
