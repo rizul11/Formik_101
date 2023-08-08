@@ -11,6 +11,13 @@ function tetheredGetNumber(resolve, reject) {
     }  else {
         reject(`Too large:${value}`);
     }
-    })
+    }, 500);
+
+    function determineParity(value) {
+        const isOdd = value % 2 === 1;
+        return{ value, isOdd};
+    }
+
+    function troubleWithGetNumber()
 
 }
