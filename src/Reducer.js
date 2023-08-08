@@ -10,6 +10,8 @@ function Reducer() {
             return state - 1
             case 'reset' :
                 return initialState
+                default:
+                    return state
     }
   };
   const [count, dispatch] = useReducer(reducer, initialState);
