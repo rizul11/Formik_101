@@ -8,8 +8,8 @@ function Reducer() {
             return state + 1 
         case 'decrement':
             return state - 1
-            case 'increment' :
-                return state + 1
+            case 'reset' :
+                return initialState
     }
   };
   const [count, dispatch] = useReducer(reducer, initialState);
