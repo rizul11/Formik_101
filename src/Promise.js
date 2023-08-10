@@ -5,6 +5,10 @@ const THRESHOLD_A = 8;
 function tetheredGetNumber(resolve, reject) {
     setTimeout(() => {
     const randomInt = Date.now();
-    const value = randomInt % 10;  
+    const value = randomInt % 10;
+    if(value < THRESHOLD_A) {
+        
+    }  
     })
+
 }
