@@ -1,7 +1,11 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
-
+import * as yup from 'yup';
 function FormikForm() {
+
+    const NewValidations = yup.object({
+      name:yup.string().required("Name is Must")  
+    })
   return (
     <div>
       <Formik
@@ -13,6 +17,7 @@ function FormikForm() {
         <Form>
           <label htmlFor="">Enter Name :</label>
           <Field type="text" name="name" />
+          <ErrorMessage name='name'/>
           <br />
           <br />
           <label htmlFor="">Enter Age :</label>
