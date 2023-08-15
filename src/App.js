@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import React from "react";
+import { FormSchema } from "./FormSchema";
 
 
 function App() {
@@ -8,8 +9,9 @@ function App() {
     name:'',
     email:''
   }
-  const {handleSubmit , handleChange , values} = useFormik({
+  const {handleSubmit , handleChange , values, errors} = useFormik({
        initialValues: formInitialValues,
+       validationSchema: FormSchema,
        onSubmit:(values) => {
         console.log(values);
         console.log(values.name);
@@ -30,7 +32,7 @@ function App() {
             required
           />
           <br />
-          {/* <span style={{color:'red'}}>{errors.name}</span> */}
+          <span style={{color:'red'}}>{errors.name}</span>
           <br />
           <br />
           <label htmlFor="">Enter your Email:</label>
@@ -42,7 +44,7 @@ function App() {
             required
           />
           <br />
-          {/* <span style={{color:'red'}}>{errors.email}</span> */}
+          <span style={{color:'red'}}>{errors.email}</span>
           <input type="submit" value="Submit" />
         </form>
       </div>
