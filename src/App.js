@@ -8,8 +8,13 @@ function App() {
     name:'',
     email:''
   }
-  const formik = useFormik({
-       initialValues: formInitialValues
+  const {handleSubmit , handleChange , values} = useFormik({
+       initialValues: formInitialValues,
+       onSubmit:(values) => {
+        console.log(values);
+        console.log(values.name);
+        console.log(values.email);
+       }
     })
   return (
     <div>
@@ -20,24 +25,24 @@ function App() {
           <input
             type="text"
             name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
+            onChange={handleChange}
+            value={values.name}
             required
           />
           <br />
-          <span style={{color:'red'}}>{errors.name}</span>
+          {/* <span style={{color:'red'}}>{errors.name}</span> */}
           <br />
           <br />
           <label htmlFor="">Enter your Email:</label>
           <input
             type="text"
             name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
+            onChange={handleChange}
+            value={values.email}
             required
           />
           <br />
-          <span style={{color:'red'}}>{errors.email}</span>
+          {/* <span style={{color:'red'}}>{errors.email}</span> */}
           <input type="submit" value="Submit" />
         </form>
       </div>
