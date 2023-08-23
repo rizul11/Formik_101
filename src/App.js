@@ -59,7 +59,7 @@ function App() {
      else{
        setNameError(false);
      }
-  }
+  }  
   const handleEmail= (e) => {
     let email = e.target.value;
     if(!email.match(emailRegex))
