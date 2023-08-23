@@ -92,5 +92,19 @@
 
 // export default App 
 
+import React from "react";
+import { useFormik } from "formik"; 
 
+const SignupForm = () => {
+  //Pass the useFormik() hook initial form values and a submit function be called when the form is submitted 
+  const formik = useFormik ({
+    initialValues: {
+      email:'',
+
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values,null,2));
+    }
+  })
+}
 
