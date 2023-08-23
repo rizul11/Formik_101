@@ -43,16 +43,27 @@
 
 
 import React from 'react'
+import { useState } from 'react'
 
 function App() {
-  return (
+  const [name, setName] =useState();
+  const [email, setEmail] =useState();
+  const handleName = (e) => {
+     let name = e.target.value;
+     if(name.length < 3){
+
+     }
+  }
+return (
     <div>
       <div>
         <h1>Form validation</h1>
         <form>
           <label htmlFor="">Enter Name:</label>
-          <input type='text' name=''/>
+          <input type='text' name='name' onChange={handleName} value={name} required/>
           <br /><br />
+          <label htmlFor=''>Enter your Email:</label>
+          <input type='text' name='email' value={email} required />
           <input type='submit' value="Submit" />
         </form>
       </div>
