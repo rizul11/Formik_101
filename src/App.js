@@ -49,6 +49,7 @@ function App() {
   const [name, setName] =useState();
   const [email, setEmail] =useState();
   const [nameError, setNameError] = useState(false);
+  const [EmailError, setEmailError] = useState(false);
   const handleName = (e) => {
      let name = e.target.value;
      if(name.length < 3){
@@ -57,6 +58,9 @@ function App() {
      else{
        setNameError(false);
      }
+  }
+  const handleEmail= (e) => {
+    let email = e.target.value;
   }
 return (
     <div>
@@ -69,7 +73,7 @@ return (
             </span> : ""}
           <br /><br />
           <label htmlFor=''>Enter your Email:</label>
-          <input type='text' name='email' value={email} required />
+          <input type='text' name='email' onChange={handleEmail} value={email} required />
           <input type='submit' value="Submit" />
         </form>
       </div>
