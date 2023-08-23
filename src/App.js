@@ -48,10 +48,14 @@ import { useState } from 'react'
 function App() {
   const [name, setName] =useState();
   const [email, setEmail] =useState();
+  const [nameError, setNameError] = useState(false);
   const handleName = (e) => {
      let name = e.target.value;
      if(name.length < 3){
-
+        setNameError(true);
+     }
+     else{
+       setNameError(false);
      }
   }
 return (
@@ -60,7 +64,9 @@ return (
         <h1>Form validation</h1>
         <form>
           <label htmlFor="">Enter Name:</label>
-          <input type='text' name='name' onChange={handleName} value={name} required/>
+          <input type='text' name='name' onChange={handleName} value={name} required/><br/>
+          {nameError ? <span style={{color:'red'}}>Name should be more than 2 letters
+            </span> : ""}
           <br /><br />
           <label htmlFor=''>Enter your Email:</label>
           <input type='text' name='email' value={email} required />
