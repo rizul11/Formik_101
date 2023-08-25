@@ -1,73 +1,50 @@
+import { useFormik } from "formik";
 import React from "react";
-import { useState } from "react";
+
 
 function App() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [nameError, setNameError] = useState(false);
-  const [EmailError, setEmailError] = useState(false);
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const handleName = (e) => {
-    let name = e.target.value;
-    if (name.length < 3) {
-      setNameError(true);
-    } else {
-      setNameError(false);
-    }
-  };
-  const handleEmail = (e) => {
-    let email = e.target.value;
-    if (!email.match(emailRegex)) {
-      setEmailError(true);
-    } else {
-      setEmailError(false);
-    }
-  };
+    
+  const formInitialValues = {
+    name:'',
+    email:''
+  }
+  const formik = useFormik({
+       initialValues: formInitialValues
+    })
   return (
     <div>
       <div>
         <h1>Form validation</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="">Enter Name:</label>
           <input
             type="text"
             name="name"
-            onChange={handleName}
-            value={name}
+            onChange={formik.handleChange}
+            value={formik.values.name}
             required
           />
           <br />
-          {nameError ? (
-            <span style={{ color: "red" }}>
-              Name should be more than 2 letters
-            </span>
-          ) : (
-            ""
-          )}
+          <span style={{color:'red'}}>{errors.name}</span>
           <br />
           <br />
           <label htmlFor="">Enter your Email:</label>
           <input
             type="text"
             name="email"
-            onChange={handleEmail}
-            value={email}
+            onChange={formik.handleChange}
+            value={formik.values.email}
             required
           />
           <br />
-          {EmailError ? (
-            <span style={{ color: "red" }}>
-              Name should be more than 2 letters{" "}
-            </span>
-          ) : (
-            ""
-          )}
+          <span style={{color:'red'}}>{errors.email}</span>
           <input type="submit" value="Submit" />
         </form>
       </div>
     </div>
   );
-}
+};
+
 
 export default App;
+
