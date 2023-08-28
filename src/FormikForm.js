@@ -8,13 +8,13 @@ function FormikForm() {
     })
   return (
     <div>
-      <Formik
+      <Formik 
+      validationSchema={NewValidations}
         initialValues={{ name: "", age: "", password: "" }}
         onSubmit={(values) => {
           console.log(values);
         }}
-      >
-        <Form>
+>            <Form>
           <label htmlFor="">Enter Name :</label>
           <Field type="text" name="name" />
           <ErrorMessage name='name'/>
