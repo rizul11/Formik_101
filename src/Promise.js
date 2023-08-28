@@ -1,9 +1,9 @@
-const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("foo");
-    }, 300);
-});
+// To experiment with error handling , "threshold" values cause errors randomly
 
-myPromise
-.then(handleFulfilledA , handleRejectedA)
-.then(handleFulfilledA , handleRejectedB)
+const THRESHOLD_A = 8; 
+
+function tetheredGetNumber(resolve, reject) {
+    setTimeout(() => {
+        
+    })
+}
