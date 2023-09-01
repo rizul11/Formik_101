@@ -7,6 +7,7 @@ import CardBS from "./CardBS";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import FetchAPI from "./FetchAPI";
+import GetAxios from "./GetAxios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,8 @@ root.render(
     {/* <App /> */}
     {/* <FormikForm/> */}
     {/* <CardBS /> */}
-    <FetchAPI />
+    {/* <FetchAPI /> */}
+    <GetAxios />
   </React.StrictMode>
 );
 
