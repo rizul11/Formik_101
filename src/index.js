@@ -4,11 +4,10 @@ import "./index.css";
 // import FormikForm from './FormikForm';
 import CardBS from "./CardBS";
 // import App from './App';
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import FetchAPI from "./FetchAPI";
 import GetAxios from "./GetAxios";
-import FireandIce from "./FireandIce";
+import PostAxios from "./PostAxios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,8 +16,9 @@ root.render(
     {/* <FormikForm/> */}
     {/* <CardBS /> */}
     {/* <FetchAPI /> */}
-    {/* <GetAxios /> */}
-    <FireandIce/>
+    {/* <GetAxios />
+     */}
+     <PostAxios/>
   </React.StrictMode>
 );
 
